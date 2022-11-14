@@ -1,7 +1,7 @@
 
 const GameSection = ({ id, activeTab, children }) => {
     return (
-        activeTab === id ? <div className="">{children}</div>
+        activeTab === id ? <div>{children}</div>
             : null
     );
 };

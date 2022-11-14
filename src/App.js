@@ -7,6 +7,7 @@ function App() {
       <header className="py-20">
         <p className='text-5xl font-bold'>Let's Play with Dice</p>
       </header>
+      
       <Tabs />
 
       <p className="text-sm my-4 ">All rights reserved | Nitish Sharma</p>

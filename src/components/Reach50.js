@@ -7,6 +7,7 @@ const Reach50 = () => {
     const [score, setScore] = useState(0);
     const [step, setStep] = useState(-1);
     const [isWon, setIsWon] = useState(null);
+
     const [diceValue, rollDice] = useDice();
 
     useEffect(() => {
@@ -14,10 +15,10 @@ const Reach50 = () => {
         const newStep = step + 1;
         setScore(newScore);
         setStep(newStep);
-        setIsWon(getGameStatus(newStep, newScore));
+        setIsWon(checkGameStatus(newStep, newScore));
     }, [diceValue]);
 
-    const getGameStatus = (step, score) => {
+    const checkGameStatus = (step, score) => {
         var won = null;
         if (step === 15) {
             won = score >= 50;
@@ -45,8 +46,12 @@ const Reach50 = () => {
 
             <p className="my-2 font-medium">Your Score</p>
             <p className=" text-6xl text-secondary font-bold ">{score}</p>
+
             <button onClick={rollDice} disabled={isWon !== null} className="btn-primary">Roll the dice</button>
-            {diceValue ? <p>You got: {diceValue}</p> : <p>roll the dice to play</p>}
+            {diceValue
+                ? <p>You got: {diceValue}</p>
+                : <p>roll the dice to play</p>}
+
             <p className="my-2">Your have played <span className="text-secondary">{step} steps</span></p>
 
             <div className="h-20">

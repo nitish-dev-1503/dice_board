@@ -6,14 +6,16 @@ import logo from '../assets/sevroll.svg';
 const SevRoll = () => {
     const [score, setScore] = useState(0);
     const [isWon, setIsWon] = useState(false);
+
     const [diceValue, rollDice] = useDice();
 
     useEffect(() => {
         const newScore = score + diceValue;
         setScore(newScore);
-        setIsWon(newScore !== 0 && newScore % 7 === 0);
+        setIsWon(checkGameStatus(newScore));
     }, [diceValue]);
 
+    const checkGameStatus = (score) => score !== 0 && score % 7 === 0;
 
     const resetPlayer = (event) => {
         event.preventDefault();
@@ -31,14 +33,18 @@ const SevRoll = () => {
 
             <p className="my-2 font-medium">Your Score</p>
             <p className=" text-6xl text-secondary font-bold ">{score}</p>
+
             <button onClick={rollDice} disabled={isWon} className="btn-primary">Roll the dice</button>
-            {diceValue ? <p>You got: {diceValue}</p> : <p>roll the dice to play</p>}
+            {diceValue
+                ? <p>You got: {diceValue}</p>
+                : <p>roll the dice to play</p>}
 
             <div className="h-20">
                 {isWon === false
                     ? null
                     : <p className="text-2xl text-secondary my-2">Hurray!!! You have scored a multiple of 7.<br />YOU WON</p>}
             </div>
+
             <button onClick={resetPlayer} disabled={!isWon} className="btn-primary">Replay</button>
 
         </div>
