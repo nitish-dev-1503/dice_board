@@ -1,6 +1,10 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# About Dice_Board
+Dice_board is a react project showcasing a dashboard of multiple dice games. Dice games arw basically simple games which can be played using dices. 
+Currently there are two games avaialble SevRoll and Reach50.
+### SevRoll
+Roll the dice to score points and score a multiple of 7 to win.
+### Reach50
+Roll the dice to score points and score 50 or more in at most 15 steps to win.
 
 ## Available Scripts
 
