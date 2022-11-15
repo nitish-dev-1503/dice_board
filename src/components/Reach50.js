@@ -38,7 +38,7 @@ const Reach50 = () => {
 
     return (
         <div className="game">
-            <img src={logo} className="h-20 my-10" alt="logo" />
+            <img src={logo} className="h-20 my-10" alt="reach50-logo" />
             <div className="text-left bg-teal-50 p-6 rounded-lg m-4">
                 <p className="font-medium">How to play?</p>
                 <p>Roll the dice to score points and score 50 or more in at most 15 steps to win.</p>

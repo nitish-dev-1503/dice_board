@@ -25,7 +25,7 @@ const SevRoll = () => {
 
     return (
         <div className="game">
-            <img src={logo} className="h-20 my-10" alt="logo" />
+            <img src={logo} className="h-20 my-10" alt="sevroll-logo" />
             <div className="text-left bg-teal-50 p-6 rounded-lg m-4">
                 <p className="font-medium">How to play?</p>
                 <p>Roll the dice to score points and score a multiple of 7 to win.</p>
