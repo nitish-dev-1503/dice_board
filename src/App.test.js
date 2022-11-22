@@ -1,11 +1,15 @@
 import '@testing-library/jest-dom';
-import { render, screen } from "@testing-library/react"
+import { render, screen } from "@testing-library/react";
+import renderer from 'react-test-renderer';
 import App from "./App";
 
 
-jest.mock('./components/Tabs', () => () => {
-    const mockedTabs = <div data-testid='tabs' />;
-    return mockedTabs;
+describe('App components snapshot', () => {
+    it('renders correctly', () => {
+        const tree = renderer.create(<App />).toJSON();
+
+        expect(tree).toMatchSnapshot();
+    })
 });
 
 describe('App component', () => {
@@ -24,10 +28,10 @@ describe('App component', () => {
     })
 
     test('renders Tabs component', () => {
-        render(<App />);
+        const { getAllByRole } = render(<App />);
 
-        const tabs = screen.getByTestId('tabs');
-        expect(tabs).toBeInTheDocument();
+        const tabs = getAllByRole("listitem")
+        expect(tabs.length).toBe(2);
     })
 
     test('renders footer', () => {
