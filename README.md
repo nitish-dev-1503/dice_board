@@ -1,6 +1,5 @@
 # About Dice_Board
-Dice_board is a react project showcasing a dashboard of multiple dice games. Dice games arw basically simple games which can be played using dices. 
-Currently there are two games avaialble SevRoll and Reach50.
+Dice_board is a react project to showcase a dashboard of multiple dice games. Here, dice games refers to simple games which can be played using dices. Currently there are two games available SevRoll and Reach50 added to the dashboard.
 ### SevRoll
 Roll the dice to score points and score a multiple of 7 to win.
 ### Reach50
